@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaking.WebApi", "NoteTaking.WebApi\NoteTaking.WebApi.csproj", "{9D03B661-7755-4872-81C8-AA0713DE3984}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaking.DataAccess.Contracts", "NoteTaking.DataAccess.Contracts\NoteTaking.DataAccess.Contracts.csproj", "{05CB37A4-4AA1-4F21-B62F-2CE0C89AD3D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaking.Service.Models", "NoteTaking.Service.Models\NoteTaking.Service.Models.csproj", "{5A1E9E5F-977B-4776-AC26-932A97FB1B36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaking.Service.Contracts", "NoteTaking.Service.Contracts\NoteTaking.Service.Contracts.csproj", "{4E043283-0021-4768-A9C1-931205171173}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaking.Service", "NoteTaking.Service\NoteTaking.Service.csproj", "{205CE9BE-A4EE-4979-AFAE-5DF04BCCADF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaking.DataAccess.EfCore", "NoteTaking.DataAccess.EfCore\NoteTaking.DataAccess.EfCore.csproj", "{9B48CEE0-F4CC-48F9-8CE7-3197ED018E61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D03B661-7755-4872-81C8-AA0713DE3984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D03B661-7755-4872-81C8-AA0713DE3984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D03B661-7755-4872-81C8-AA0713DE3984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D03B661-7755-4872-81C8-AA0713DE3984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CB37A4-4AA1-4F21-B62F-2CE0C89AD3D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CB37A4-4AA1-4F21-B62F-2CE0C89AD3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CB37A4-4AA1-4F21-B62F-2CE0C89AD3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CB37A4-4AA1-4F21-B62F-2CE0C89AD3D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A1E9E5F-977B-4776-AC26-932A97FB1B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A1E9E5F-977B-4776-AC26-932A97FB1B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A1E9E5F-977B-4776-AC26-932A97FB1B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A1E9E5F-977B-4776-AC26-932A97FB1B36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E043283-0021-4768-A9C1-931205171173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E043283-0021-4768-A9C1-931205171173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E043283-0021-4768-A9C1-931205171173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E043283-0021-4768-A9C1-931205171173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{205CE9BE-A4EE-4979-AFAE-5DF04BCCADF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{205CE9BE-A4EE-4979-AFAE-5DF04BCCADF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{205CE9BE-A4EE-4979-AFAE-5DF04BCCADF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{205CE9BE-A4EE-4979-AFAE-5DF04BCCADF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B48CEE0-F4CC-48F9-8CE7-3197ED018E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B48CEE0-F4CC-48F9-8CE7-3197ED018E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B48CEE0-F4CC-48F9-8CE7-3197ED018E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B48CEE0-F4CC-48F9-8CE7-3197ED018E61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5333F2B-DCC3-47A3-AB36-2DAC2D775BBD}
+	EndGlobalSection
+EndGlobal
