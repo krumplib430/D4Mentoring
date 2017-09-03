@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NoteTaking.Common\NoteTaking.Common.csproj" />
+    <ProjectReference Include="..\NoteTaking.DataAccess.Contracts\NoteTaking.DataAccess.Contracts.csproj" />
     <ProjectReference Include="..\NoteTaking.Service.Contracts\NoteTaking.Service.Contracts.csproj" />
   </ItemGroup>
 

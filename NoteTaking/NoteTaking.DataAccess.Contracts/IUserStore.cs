@@ -4,6 +4,6 @@ namespace NoteTaking.DataAccess.Contracts
 {
 	public interface IUserStore
 	{
-		bool Create(User user);
+		void Create(User user);
 	}
 }

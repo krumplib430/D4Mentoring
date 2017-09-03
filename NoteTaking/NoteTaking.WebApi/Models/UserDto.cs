@@ -6,12 +6,12 @@ namespace NoteTaking.WebApi.Models
 	{
 		public Guid Id { get; set; }
 
+		public string UserName { get; set; }
+
 		public string FirstName { get; set; }
 
 		public string Lastname { get; set; }
 
-		//public List<NoteDao> Notes { get; set; }
-
-		public byte[] ConcurrencyToken { get; set; }
+		//public List<Note> Notes { get; set; }
 	}
 }

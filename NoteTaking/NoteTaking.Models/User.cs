@@ -7,12 +7,14 @@ namespace NoteTaking.Models
 	{
 		public Guid? Id { get; set; }
 
+		public string UserName { get; set; }
+
 		public string FirstName { get; set; }
 
 		public string Lastname { get; set; }
 
-		public List<Note> Notes { get; set; }
+		public DateTime? RegisteredOn { get; set; }
 
-		public byte[] ConcurrencyToken { get; set; }
+		public List<Note> Notes { get; set; }
 	}
 }

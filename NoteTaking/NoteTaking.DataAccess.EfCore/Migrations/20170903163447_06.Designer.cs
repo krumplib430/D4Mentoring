@@ -11,9 +11,10 @@ using System;
 namespace NoteTaking.DataAccess.EfCore.Migrations
 {
     [DbContext(typeof(NoteTakingContext))]
-    partial class NoteTakingContextModelSnapshot : ModelSnapshot
+    [Migration("20170903163447_06")]
+    partial class _06
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

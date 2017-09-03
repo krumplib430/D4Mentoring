@@ -6,6 +6,7 @@ namespace NoteTaking.DataAccess.EfCore
 	public class NoteTakingContext : DbContext
 	{
 		private const int NAME_MAX_LENGTH = 50;
+		private const int USER_NAME_MAX_LENGTH = 20;
 
 		public DbSet<UserDao> Users { get; set; }
 
@@ -21,12 +22,22 @@ namespace NoteTaking.DataAccess.EfCore
 		/// <inheritdoc />
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
+			// TODO: add to config.
 			optionsBuilder.UseNpgsql(@"User ID=notetaking;Password=Abcd123;Host=localhost;Port=5432;Database=NoteTaking;Pooling=true;");
 			base.OnConfiguring(optionsBuilder);
 		}
 
 		private static void SetupUserDao(ModelBuilder modelBuilder)
 		{
+			modelBuilder.Entity<UserDao>()
+				.HasIndex(s => s.UserName)
+				.IsUnique();
+
+			modelBuilder.Entity<UserDao>()
+				.Property(u => u.UserName)
+				.IsRequired()
+				.HasMaxLength(USER_NAME_MAX_LENGTH);
+
 			modelBuilder.Entity<UserDao>()
 				.Property(u => u.FirstName)
 				.IsRequired()
@@ -36,11 +47,6 @@ namespace NoteTaking.DataAccess.EfCore
 				.Property(u => u.Lastname)
 				.IsRequired()
 				.HasMaxLength(NAME_MAX_LENGTH);
-
-			modelBuilder.Entity<UserDao>()
-				.Property(u => u.ConcurrencyToken)
-				.ValueGeneratedOnAddOrUpdate()
-				.IsConcurrencyToken();
 		}
 
 		private static void SetupNoteDao(ModelBuilder modelBuilder)

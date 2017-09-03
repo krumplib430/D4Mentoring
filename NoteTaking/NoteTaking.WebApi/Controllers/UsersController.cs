@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using NoteTaking.WebApi.Models;
 using NoteTaking.WebApi.Repositories;
 
@@ -21,6 +22,21 @@ namespace NoteTaking.WebApi.Controllers
 			var userListItemDtos = _userRepository.GetAll();
 
 			return Ok(userListItemDtos);
+		}
+
+		[ProducesResponseType(200)]
+		[ProducesResponseType(404)]
+		[HttpGet("{userId}", Name = "GetUser")]
+		public IActionResult Get(Guid userId)
+		{
+			var userDto = _userRepository.Get(userId);
+
+			if (userDto == null)
+			{
+				return NotFound();
+			}
+
+			return Ok(userDto);
 		}
 
 		[ProducesResponseType(201)]
