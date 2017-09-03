@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using NoteTaking.Common.Mapping;
 using NoteTaking.DataAccess.Contracts;
 using NoteTaking.DataAccess.EfCore.Models;
@@ -26,11 +28,11 @@ namespace NoteTaking.DataAccess.EfCore.Services
 			}
 		}
 
-		public User Get(Guid id)
+		public async Task<User> GetAsync(Guid id)
 		{
 			using (var context = new NoteTakingContext())
 			{
-				var userDao = context.Users.FirstOrDefault(u => u.Id == id);
+				var userDao = await context.Users.FirstOrDefaultAsync(u => u.Id == id);
 				return userDao == null ? null : _mappingService.Map<UserDao, User>(userDao);
 			}
 		}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using NoteTaking.Common.Mapping;
 using NoteTaking.Models;
 using NoteTaking.Service.Contracts;
@@ -18,9 +19,9 @@ namespace NoteTaking.WebApi.Repositories
 			_userService = userService;
 		}
 
-		public UserDto Get(Guid id)
+		public async Task<UserDto> GetAsync(Guid id)
 		{
-			var user = _userService.Get(id);
+			var user = await _userService.Get(id);
 			return _mappingService.Map<User, UserDto>(user);
 		}
 
@@ -32,10 +33,10 @@ namespace NoteTaking.WebApi.Repositories
 		}
 
 		/// <inheritdoc />
-		public UserDto Create(UserCreateDto userCreateDto)
+		public async Task<UserDto> CreateAsync(UserCreateDto userCreateDto)
 		{
 			var userDtoToCreate = _mappingService.Map<UserCreateDto, User>(userCreateDto);
-			var createdUser = _userService.Create(userDtoToCreate);
+			var createdUser = await _userService.CreateAsync(userDtoToCreate);
 
 			return _mappingService.Map<User, UserDto>(createdUser);
 		}

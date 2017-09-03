@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using NoteTaking.Common.Wrappers;
 using NoteTaking.DataAccess.Contracts;
 using NoteTaking.Models;
@@ -29,22 +30,22 @@ namespace NoteTaking.Service
 		}
 
 		/// <inheritdoc />
-		public User Get(Guid id)
+		public async Task<User> Get(Guid id)
 		{
-			return _userQuery.Get(id);
+			return await _userQuery.GetAsync(id);
 		}
 
 		/// <inheritdoc />
-		public User Create(User user)
+		public async Task<User> CreateAsync(User user)
 		{
 			// TODO: do validation here using fluent validation
 
 			user.Id = _guidWrapper.NewGuid();
 			user.RegisteredOn = _dateTimeWrapper.UtcNow();
 
-			_userStore.Create(user);
+			await _userStore.CreateAsync(user);
 
-			return _userQuery.Get(user.Id.Value);
+			return await _userQuery.GetAsync(user.Id.Value);
 		}
 	}
 }

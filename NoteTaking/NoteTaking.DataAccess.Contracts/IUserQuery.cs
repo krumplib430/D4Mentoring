@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using NoteTaking.Models;
 
 namespace NoteTaking.DataAccess.Contracts
@@ -8,6 +9,6 @@ namespace NoteTaking.DataAccess.Contracts
 	{
 		List<User> GetAll();
 
-		User Get(Guid id);
+		Task<User> GetAsync(Guid id);
 	}
 }

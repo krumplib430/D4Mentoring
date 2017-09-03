@@ -1,9 +1,10 @@
-﻿using NoteTaking.Models;
+﻿using System.Threading.Tasks;
+using NoteTaking.Models;
 
 namespace NoteTaking.DataAccess.Contracts
 {
 	public interface IUserStore
 	{
-		void Create(User user);
+		Task CreateAsync(User user);
 	}
 }

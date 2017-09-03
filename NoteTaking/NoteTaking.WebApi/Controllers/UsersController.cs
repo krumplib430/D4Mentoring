@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NoteTaking.WebApi.Models;
 using NoteTaking.WebApi.Repositories;
@@ -27,9 +28,9 @@ namespace NoteTaking.WebApi.Controllers
 		[ProducesResponseType(200)]
 		[ProducesResponseType(404)]
 		[HttpGet("{userId}", Name = "GetUser")]
-		public IActionResult Get(Guid userId)
+		public async Task<IActionResult> Get(Guid userId)
 		{
-			var userDto = _userRepository.Get(userId);
+			var userDto = await _userRepository.GetAsync(userId);
 
 			if (userDto == null)
 			{
@@ -43,14 +44,14 @@ namespace NoteTaking.WebApi.Controllers
 		[ProducesResponseType(400)]
 		[ProducesResponseType(409)]
 		[HttpPost]
-		public IActionResult Post([FromBody] UserCreateDto userCreateDto)
+		public async Task<IActionResult> Post([FromBody] UserCreateDto userCreateDto)
 		{
 			if (userCreateDto == null)
 			{
 				return BadRequest();
 			}
 
-			var userDto = _userRepository.Create(userCreateDto);
+			var userDto = await _userRepository.CreateAsync(userCreateDto);
 
 			return CreatedAtRoute("GetUser", new { UserId = userDto.Id }, userDto);
 		}

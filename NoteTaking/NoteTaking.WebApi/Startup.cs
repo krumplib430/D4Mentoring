@@ -12,6 +12,7 @@ using NoteTaking.Service;
 using NoteTaking.Service.Contracts;
 using NoteTaking.WebApi.Bootstrap;
 using NoteTaking.WebApi.Repositories;
+using Swashbuckle.AspNetCore.Swagger;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace NoteTaking.WebApi
@@ -28,6 +29,8 @@ namespace NoteTaking.WebApi
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc();
+
+			services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "Note Taking API", Version = "v1" }); });
 
 			// TODO: move this to autofac modules to appropriate projects
 			services.AddTransient<IUserRepository, UserRepository>();
@@ -55,6 +58,9 @@ namespace NoteTaking.WebApi
 			}
 
 			app.UseMvc();
+
+			app.UseSwagger();
+			app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "CC Admin API V1"); });
 		}
 	}
 }

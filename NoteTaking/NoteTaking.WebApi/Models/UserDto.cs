@@ -12,6 +12,8 @@ namespace NoteTaking.WebApi.Models
 
 		public string Lastname { get; set; }
 
+		public DateTime RegisteredOn { get; set; }
+
 		//public List<Note> Notes { get; set; }
 	}
 }

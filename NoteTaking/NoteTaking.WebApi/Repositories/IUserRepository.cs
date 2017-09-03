@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using NoteTaking.WebApi.Models;
 
 namespace NoteTaking.WebApi.Repositories
 {
 	public interface IUserRepository
 	{
-		UserDto Get(Guid id);
+		Task<UserDto> GetAsync(Guid id);
 
-		UserDto Create(UserCreateDto userCreateDto);
+		Task<UserDto> CreateAsync(UserCreateDto userCreateDto);
 
 		List<UserListItemDto> GetAll();
 	}
