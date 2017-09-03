@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NoteTaking.WebApi.Models
 {
@@ -14,6 +15,6 @@ namespace NoteTaking.WebApi.Models
 
 		public DateTime RegisteredOn { get; set; }
 
-		//public List<Note> Notes { get; set; }
+		public List<NoteDto> Notes { get; set; }
 	}
 }

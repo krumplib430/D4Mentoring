@@ -15,6 +15,9 @@ namespace NoteTaking.WebApi.Bootstrap
 			cfg.CreateMap<User, UserDto>();
 			cfg.CreateMap<User, UserListItemDto>();
 			cfg.CreateMap<UserDto, UserUpdateDto>();
+
+			cfg.CreateMap<NoteCreateDto, Note>();
+			cfg.CreateMap<Note, NoteDto>();
 		}
 	}
 }

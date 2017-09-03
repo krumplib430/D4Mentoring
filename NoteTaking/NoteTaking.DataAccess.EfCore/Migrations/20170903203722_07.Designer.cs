@@ -11,9 +11,10 @@ using System;
 namespace NoteTaking.DataAccess.EfCore.Migrations
 {
     [DbContext(typeof(NoteTakingContext))]
-    partial class NoteTakingContextModelSnapshot : ModelSnapshot
+    [Migration("20170903203722_07")]
+    partial class _07
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,8 +41,10 @@ namespace NoteTaking.DataAccess.EfCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId", "Title")
+                    b.HasIndex("Title")
                         .IsUnique();
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Notes");
                 });

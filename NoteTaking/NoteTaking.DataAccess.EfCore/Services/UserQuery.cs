@@ -31,7 +31,7 @@ namespace NoteTaking.DataAccess.EfCore.Services
 		{
 			using (var context = new NoteTakingContext())
 			{
-				var userDao = await context.Users.FirstOrDefaultAsync(u => u.Id == id);
+				var userDao = await context.Users.Include(u => u.Notes).FirstOrDefaultAsync(u => u.Id == id);
 				return userDao == null ? null : _mappingService.Map<UserDao, User>(userDao);
 			}
 		}

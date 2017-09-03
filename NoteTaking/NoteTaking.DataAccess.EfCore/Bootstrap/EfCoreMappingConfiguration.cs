@@ -10,6 +10,8 @@ namespace NoteTaking.DataAccess.EfCore.Bootstrap
 		public void Configure(IMapperConfigurationExpression cfg)
 		{
 			cfg.CreateMap<User, UserDao>().ReverseMap();
+
+			cfg.CreateMap<Note, NoteDao>().ReverseMap();
 		}
 	}
 }

@@ -7,6 +7,7 @@ namespace NoteTaking.DataAccess.EfCore
 	{
 		private const int NAME_MAX_LENGTH = 50;
 		private const int USER_NAME_MAX_LENGTH = 20;
+		private const int TITLE_MAX_LENGTH = 20;
 
 		public DbSet<UserDao> Users { get; set; }
 
@@ -52,13 +53,17 @@ namespace NoteTaking.DataAccess.EfCore
 		private static void SetupNoteDao(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<NoteDao>()
-				.Property(n => n.Text)
-				.IsRequired();
+				.HasIndex(s => new { s.UserId, s.Title })
+				.IsUnique();
 
 			modelBuilder.Entity<NoteDao>()
-				.Property(u => u.ConcurrencyToken)
-				.ValueGeneratedOnAddOrUpdate()
-				.IsConcurrencyToken();
+				.Property(n => n.Title)
+				.IsRequired()
+				.HasMaxLength(TITLE_MAX_LENGTH);
+
+			modelBuilder.Entity<NoteDao>()
+				.Property(n => n.Text)
+				.IsRequired();
 		}
 	}
 }

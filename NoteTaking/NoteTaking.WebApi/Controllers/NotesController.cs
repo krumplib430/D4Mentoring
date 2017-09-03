@@ -31,5 +31,31 @@ namespace NoteTaking.WebApi.Controllers
 		{
 			throw new NotImplementedException();
 		}
+
+		[ProducesResponseType(200)]
+		[ProducesResponseType(400)]
+		[ProducesResponseType(404)]
+		[HttpPut("{noteId}")]
+		public async Task<IActionResult> Put([FromRoute] Guid userId, [FromRoute] Guid noteId, [FromBody] NoteUpdateDto noteUpdateDto)
+		{
+			throw new NotImplementedException();
+		}
+
+		[ProducesResponseType(200)]
+		[ProducesResponseType(400)]
+		[ProducesResponseType(404)]
+		[HttpPatch("{noteId}")]
+		public async Task<IActionResult> Patch([FromRoute] Guid userId, [FromRoute] Guid noteId, [FromBody] NoteUpdateDto noteUpdateDto)
+		{
+			throw new NotImplementedException();
+		}
+
+		[ProducesResponseType(200)]
+		[ProducesResponseType(404)]
+		[HttpDelete("{noteId}")]
+		public async Task<IActionResult> Delete([FromRoute] Guid userId, [FromRoute] Guid noteId)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
