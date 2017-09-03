@@ -11,8 +11,10 @@ namespace NoteTaking.WebApi.Bootstrap
 		public void Configure(IMapperConfigurationExpression cfg)
 		{
 			cfg.CreateMap<UserCreateDto, User>();
+			cfg.CreateMap<UserUpdateDto, User>();
 			cfg.CreateMap<User, UserDto>();
 			cfg.CreateMap<User, UserListItemDto>();
+			cfg.CreateMap<UserDto, UserUpdateDto>();
 		}
 	}
 }

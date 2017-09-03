@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NoteTaking.Common.Mapping;
@@ -19,11 +18,11 @@ namespace NoteTaking.DataAccess.EfCore.Services
 			_mappingService = mappingService;
 		}
 
-		public List<User> GetAll()
+		public async Task<List<User>> GetAllAsync()
 		{
 			using (var context = new NoteTakingContext())
 			{
-				var userDaos = context.Users.ToList();
+				var userDaos = await context.Users.ToListAsync();
 				return _mappingService.Map<List<UserDao>, List<User>>(userDaos);
 			}
 		}

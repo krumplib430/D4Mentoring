@@ -1,10 +1,14 @@
-﻿using System.Threading.Tasks;
-using NoteTaking.Models;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace NoteTaking.DataAccess.Contracts
 {
-	public interface IUserStore
+	public interface IStore<in T>
 	{
-		Task CreateAsync(User user);
+		Task CreateAsync(T entity);
+
+		Task UpdateAsync(T entity);
+
+		Task DeleteAsync(Guid id);
 	}
 }

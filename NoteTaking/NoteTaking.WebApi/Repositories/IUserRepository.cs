@@ -9,8 +9,12 @@ namespace NoteTaking.WebApi.Repositories
 	{
 		Task<UserDto> GetAsync(Guid id);
 
+		Task<List<UserListItemDto>> GetAllAsync();
+
 		Task<UserDto> CreateAsync(UserCreateDto userCreateDto);
 
-		List<UserListItemDto> GetAll();
+		Task UpdateAsync(UserUpdateDto userUpdateDto);
+
+		Task DeleteAsync(Guid id);
 	}
 }

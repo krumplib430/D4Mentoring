@@ -7,10 +7,14 @@ namespace NoteTaking.Service.Contracts
 {
 	public interface IUserService
 	{
-		List<User> GetAll();
+		Task<List<User>> GetAllAsync();
 
-		Task<User> Get(Guid id);
+		Task<User> GetAsync(Guid id);
 
 		Task<User> CreateAsync(User user);
+
+		Task UpdateAsync(User user);
+
+		Task DeleteAsync(Guid id);
 	}
 }

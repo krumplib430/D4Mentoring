@@ -12,10 +12,10 @@ namespace NoteTaking.Service
 	{
 		private readonly IGuidWrapper _guidWrapper;
 		private readonly IDateTimeWrapper _dateTimeWrapper;
-		private readonly IUserStore _userStore;
+		private readonly IStore<User> _userStore;
 		private readonly IUserQuery _userQuery;
 
-		public UserService(IGuidWrapper guidWrapper, IDateTimeWrapper dateTimeWrapper, IUserStore userStore, IUserQuery userQuery)
+		public UserService(IGuidWrapper guidWrapper, IDateTimeWrapper dateTimeWrapper, IStore<User> userStore, IUserQuery userQuery)
 		{
 			_guidWrapper = guidWrapper;
 			_dateTimeWrapper = dateTimeWrapper;
@@ -24,13 +24,13 @@ namespace NoteTaking.Service
 		}
 
 		/// <inheritdoc />
-		public List<User> GetAll()
+		public async Task<List<User>> GetAllAsync()
 		{
-			return _userQuery.GetAll();
+			return await _userQuery.GetAllAsync();
 		}
 
 		/// <inheritdoc />
-		public async Task<User> Get(Guid id)
+		public async Task<User> GetAsync(Guid id)
 		{
 			return await _userQuery.GetAsync(id);
 		}
@@ -46,6 +46,18 @@ namespace NoteTaking.Service
 			await _userStore.CreateAsync(user);
 
 			return await _userQuery.GetAsync(user.Id.Value);
+		}
+
+		public async Task UpdateAsync(User user)
+		{
+			// TODO: do validation here using fluent validation
+
+			await _userStore.UpdateAsync(user);
+		}
+
+		public async Task DeleteAsync(Guid id)
+		{
+			await _userStore.DeleteAsync(id);
 		}
 	}
 }

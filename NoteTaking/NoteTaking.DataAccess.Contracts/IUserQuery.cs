@@ -7,7 +7,7 @@ namespace NoteTaking.DataAccess.Contracts
 {
 	public interface IUserQuery
 	{
-		List<User> GetAll();
+		Task<List<User>> GetAllAsync();
 
 		Task<User> GetAsync(Guid id);
 	}

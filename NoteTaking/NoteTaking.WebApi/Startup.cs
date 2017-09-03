@@ -8,6 +8,7 @@ using NoteTaking.Common.Wrappers;
 using NoteTaking.DataAccess.Contracts;
 using NoteTaking.DataAccess.EfCore.Bootstrap;
 using NoteTaking.DataAccess.EfCore.Services;
+using NoteTaking.Models;
 using NoteTaking.Service;
 using NoteTaking.Service.Contracts;
 using NoteTaking.WebApi.Bootstrap;
@@ -38,7 +39,7 @@ namespace NoteTaking.WebApi
 			services.AddTransient<IUserService, UserService>();
 			services.AddTransient<IGuidWrapper, GuidWrapper>();
 			services.AddTransient<IDateTimeWrapper, DateTimeWrapper>();
-			services.AddTransient<IUserStore, UserStore>();
+			services.AddTransient<IStore<User>, UserStore>();
 			services.AddTransient<IUserQuery, UserQuery>();
 
 			// TODO: make this nicer, refactor to extension method etc.

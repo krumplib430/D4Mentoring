@@ -21,24 +21,35 @@ namespace NoteTaking.WebApi.Repositories
 
 		public async Task<UserDto> GetAsync(Guid id)
 		{
-			var user = await _userService.Get(id);
+			var user = await _userService.GetAsync(id);
 			return _mappingService.Map<User, UserDto>(user);
 		}
 
 		/// <inheritdoc />
-		public List<UserListItemDto> GetAll()
+		public async Task<List<UserListItemDto>> GetAllAsync()
 		{
-			var users = _userService.GetAll();
+			var users = await _userService.GetAllAsync();
 			return _mappingService.Map<List<User>, List<UserListItemDto>>(users);
 		}
 
 		/// <inheritdoc />
 		public async Task<UserDto> CreateAsync(UserCreateDto userCreateDto)
 		{
-			var userDtoToCreate = _mappingService.Map<UserCreateDto, User>(userCreateDto);
-			var createdUser = await _userService.CreateAsync(userDtoToCreate);
+			var user = _mappingService.Map<UserCreateDto, User>(userCreateDto);
+			var createdUser = await _userService.CreateAsync(user);
 
 			return _mappingService.Map<User, UserDto>(createdUser);
+		}
+
+		public async Task UpdateAsync(UserUpdateDto userUpdateDto)
+		{
+			var user = _mappingService.Map<UserUpdateDto, User>(userUpdateDto);
+			await _userService.UpdateAsync(user);
+		}
+
+		public async Task DeleteAsync(Guid id)
+		{
+			await _userService.DeleteAsync(id);
 		}
 	}
 }

@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using NoteTaking.Common.Mapping;
 using NoteTaking.DataAccess.Contracts;
 using NoteTaking.DataAccess.EfCore.Models;
@@ -6,7 +8,7 @@ using NoteTaking.Models;
 
 namespace NoteTaking.DataAccess.EfCore.Services
 {
-	public class UserStore : IUserStore
+	public class UserStore : IStore<User>
 	{
 		private readonly IMappingService _mappingService;
 
@@ -23,6 +25,38 @@ namespace NoteTaking.DataAccess.EfCore.Services
 			using (var context = new NoteTakingContext())
 			{
 				context.Users.Add(userDao);
+				await context.SaveChangesAsync();
+			}
+		}
+
+		public async Task UpdateAsync(User user)
+		{
+			using (var context = new NoteTakingContext())
+			{
+				var storedUserDao = await context.Users.FirstOrDefaultAsync(u => u.Id == user.Id);
+				if (storedUserDao == null)
+				{
+					return;
+				}
+
+				storedUserDao.UserName = user.UserName;
+				storedUserDao.FirstName = user.FirstName;
+				storedUserDao.Lastname = user.Lastname;
+				await context.SaveChangesAsync();
+			}
+		}
+
+		public async Task DeleteAsync(Guid id)
+		{
+			using (var context = new NoteTakingContext())
+			{
+				var storedUserDao = await context.Users.FirstOrDefaultAsync(u => u.Id == id);
+				if (storedUserDao == null)
+				{
+					return;
+				}
+
+				context.Entry(storedUserDao).State = EntityState.Deleted;
 				await context.SaveChangesAsync();
 			}
 		}
