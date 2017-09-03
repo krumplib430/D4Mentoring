@@ -25,27 +25,19 @@ namespace NoteTaking.WebApi.Repositories
 		}
 
 		/// <inheritdoc />
+		public List<UserListItemDto> GetAll()
+		{
+			var users = _userService.GetAll();
+			return _mappingService.Map<List<User>, List<UserListItemDto>>(users);
+		}
+
+		/// <inheritdoc />
 		public UserDto Create(UserCreateDto userCreateDto)
 		{
 			var userDtoToCreate = _mappingService.Map<UserCreateDto, User>(userCreateDto);
 			var createdUser = _userService.Create(userDtoToCreate);
 
 			return _mappingService.Map<User, UserDto>(createdUser);
-		}
-
-		/// <inheritdoc />
-		public List<UserListItemDto> GetAll()
-		{
-			return new List<UserListItemDto>
-			{
-				new UserListItemDto
-				{
-					Id = Guid.NewGuid(),
-					UserName = "salala",
-					FirstName = "aaaa",
-					Lastname = "bbbbb"
-				}
-			};
 		}
 	}
 }

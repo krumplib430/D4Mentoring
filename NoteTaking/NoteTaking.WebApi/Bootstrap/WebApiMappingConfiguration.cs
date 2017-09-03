@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using NoteTaking.Common.Mapping;
 using NoteTaking.Models;
 using NoteTaking.WebApi.Models;
@@ -12,6 +13,7 @@ namespace NoteTaking.WebApi.Bootstrap
 		{
 			cfg.CreateMap<UserCreateDto, User>();
 			cfg.CreateMap<User, UserDto>();
+			cfg.CreateMap<User, UserListItemDto>();
 		}
 	}
 }

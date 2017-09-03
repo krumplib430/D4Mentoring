@@ -19,7 +19,11 @@ namespace NoteTaking.DataAccess.EfCore.Services
 
 		public List<User> GetAll()
 		{
-			throw new NotImplementedException();
+			using (var context = new NoteTakingContext())
+			{
+				var userDaos = context.Users.ToList();
+				return _mappingService.Map<List<UserDao>, List<User>>(userDaos);
+			}
 		}
 
 		public User Get(Guid id)

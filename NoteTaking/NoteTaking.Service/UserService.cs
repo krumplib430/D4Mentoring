@@ -25,7 +25,7 @@ namespace NoteTaking.Service
 		/// <inheritdoc />
 		public List<User> GetAll()
 		{
-			throw new NotImplementedException();
+			return _userQuery.GetAll();
 		}
 
 		/// <inheritdoc />
