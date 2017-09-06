@@ -11,6 +11,7 @@ using NoteTaking.DataAccess.EfCore.Services;
 using NoteTaking.Models;
 using NoteTaking.Service;
 using NoteTaking.Service.Contracts;
+using NoteTaking.Service.Implementation;
 using NoteTaking.WebApi.Bootstrap;
 using NoteTaking.WebApi.Repositories;
 using Swashbuckle.AspNetCore.Swagger;

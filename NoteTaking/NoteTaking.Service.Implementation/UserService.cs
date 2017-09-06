@@ -6,7 +6,7 @@ using NoteTaking.DataAccess.Contracts;
 using NoteTaking.Models;
 using NoteTaking.Service.Contracts;
 
-namespace NoteTaking.Service
+namespace NoteTaking.Service.Implementation
 {
 	public class UserService : IUserService
 	{
