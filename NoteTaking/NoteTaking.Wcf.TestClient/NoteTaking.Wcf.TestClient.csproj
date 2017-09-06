@@ -89,5 +89,11 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NoteTaking.Wcf.Contracts\NoteTaking.Wcf.Contracts.csproj">
+      <Project>{f0b581c3-93ed-4f4b-ba21-31adcb102ee9}</Project>
+      <Name>NoteTaking.Wcf.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

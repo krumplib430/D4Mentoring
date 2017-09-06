@@ -38,6 +38,9 @@
     <Reference Include="Autofac.Integration.Wcf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Wcf.4.0.0\lib\net45\Autofac.Integration.Wcf.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
@@ -57,6 +60,30 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NoteTaking.Common\NoteTaking.Common.csproj">
+      <Project>{CBE60BCC-522D-4926-B870-99D2898877B8}</Project>
+      <Name>NoteTaking.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoteTaking.DataAccess.Contracts\NoteTaking.DataAccess.Contracts.csproj">
+      <Project>{05cb37a4-4aa1-4f21-b62f-2ce0c89ad3d9}</Project>
+      <Name>NoteTaking.DataAccess.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoteTaking.DataAccess.EfCore\NoteTaking.DataAccess.EfCore.csproj">
+      <Project>{9b48cee0-f4cc-48f9-8ce7-3197ed018e61}</Project>
+      <Name>NoteTaking.DataAccess.EfCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoteTaking.Models\NoteTaking.Models.csproj">
+      <Project>{185fcfc3-62e6-4314-8cd8-d45191d773c7}</Project>
+      <Name>NoteTaking.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoteTaking.Service.Contracts\NoteTaking.Service.Contracts.csproj">
+      <Project>{4e043283-0021-4768-a9c1-931205171173}</Project>
+      <Name>NoteTaking.Service.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoteTaking.Service.Implementation\NoteTaking.Service.Implementation.csproj">
+      <Project>{205ce9be-a4ee-4979-afae-5df04bccadf1}</Project>
+      <Name>NoteTaking.Service.Implementation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NoteTaking.Wcf.Contracts\NoteTaking.Wcf.Contracts.csproj">
       <Project>{f0b581c3-93ed-4f4b-ba21-31adcb102ee9}</Project>
       <Name>NoteTaking.Wcf.Contracts</Name>
