@@ -26,6 +26,7 @@ namespace NoteTaking.Wcf.Host
 
 			var builder = new ContainerBuilder();
 
+			// TODO: separate these to modules
 			builder.RegisterType<UserService>().As<IUserService>();
 			builder.RegisterType<MappingService>().As<IMappingService>();
 			builder.RegisterType<Service.Implementation.UserService>().As<Service.Contracts.IUserService>();
