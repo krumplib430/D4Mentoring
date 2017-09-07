@@ -11,6 +11,7 @@ namespace NoteTaking.Wcf.Implementation.Bootstrap
 		{
 			cfg.CreateMap<UserCreateDto, User>();
 			cfg.CreateMap<User, UserDto>();
+			cfg.CreateMap<User, UserListItemDto>();
 
 			cfg.CreateMap<NoteCreateDto, Note>();
 			cfg.CreateMap<Note, NoteDto>();

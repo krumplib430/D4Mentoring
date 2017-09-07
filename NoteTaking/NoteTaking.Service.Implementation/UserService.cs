@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using NoteTaking.Common.Wrappers;
 using NoteTaking.DataAccess.Contracts;
@@ -40,11 +41,10 @@ namespace NoteTaking.Service.Implementation
 		{
 			// TODO: do validation here using fluent validation
 
-			user.Id = _guidWrapper.NewGuid();
-			user.RegisteredOn = _dateTimeWrapper.UtcNow();
+			SetDefaultParameters(user);
 
 			await _userStore.CreateAsync(user);
-
+			// ReSharper disable once PossibleInvalidOperationException
 			return await _userQuery.GetAsync(user.Id.Value);
 		}
 
@@ -58,6 +58,22 @@ namespace NoteTaking.Service.Implementation
 		public async Task DeleteAsync(Guid id)
 		{
 			await _userStore.DeleteAsync(id);
+		}
+
+		private void SetDefaultParameters(User user)
+		{
+			var now = _dateTimeWrapper.UtcNow();
+			user.Id = _guidWrapper.NewGuid();
+			user.RegisteredOn = now;
+
+			if (user.Notes != null && user.Notes.Any())
+			{
+				user.Notes.ForEach(n =>
+				{
+					n.CreatedOn = now;
+					n.ModifiedOn = now;
+				});
+			}
 		}
 	}
 }

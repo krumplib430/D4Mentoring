@@ -42,10 +42,30 @@
   <wsdl:message name="IUserService_Create_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="Create">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/Create" message="tns:IUserService_Create_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/CreateResponse" message="tns:IUserService_Create_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/Get" message="tns:IUserService_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetResponse" message="tns:IUserService_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetAll" message="tns:IUserService_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetAllResponse" message="tns:IUserService_GetAll_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="basicHttp" type="tns:IUserService">
@@ -59,12 +79,48 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://tempuri.org/IUserService/Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="netNamedPipe" type="tns:IUserService">
     <wsp:PolicyReference URI="#netNamedPipe_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
     <wsdl:operation name="Create">
       <soap12:operation soapAction="http://tempuri.org/IUserService/Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap12:operation soapAction="http://tempuri.org/IUserService/Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IUserService/GetAll" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

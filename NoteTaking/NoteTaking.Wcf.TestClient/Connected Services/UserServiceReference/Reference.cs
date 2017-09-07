@@ -20,6 +20,18 @@ namespace NoteTaking.Wcf.TestClient.UserServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Create", ReplyAction="http://tempuri.org/IUserService/CreateResponse")]
         System.Threading.Tasks.Task<NoteTaking.Wcf.Contracts.Models.UserDto> CreateAsync(NoteTaking.Wcf.Contracts.Models.UserCreateDto userCreateDto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Get", ReplyAction="http://tempuri.org/IUserService/GetResponse")]
+        NoteTaking.Wcf.Contracts.Models.UserDto Get(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Get", ReplyAction="http://tempuri.org/IUserService/GetResponse")]
+        System.Threading.Tasks.Task<NoteTaking.Wcf.Contracts.Models.UserDto> GetAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAll", ReplyAction="http://tempuri.org/IUserService/GetAllResponse")]
+        NoteTaking.Wcf.Contracts.Models.UserListItemDto[] GetAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAll", ReplyAction="http://tempuri.org/IUserService/GetAllResponse")]
+        System.Threading.Tasks.Task<NoteTaking.Wcf.Contracts.Models.UserListItemDto[]> GetAllAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +67,22 @@ namespace NoteTaking.Wcf.TestClient.UserServiceReference {
         
         public System.Threading.Tasks.Task<NoteTaking.Wcf.Contracts.Models.UserDto> CreateAsync(NoteTaking.Wcf.Contracts.Models.UserCreateDto userCreateDto) {
             return base.Channel.CreateAsync(userCreateDto);
+        }
+        
+        public NoteTaking.Wcf.Contracts.Models.UserDto Get(System.Guid id) {
+            return base.Channel.Get(id);
+        }
+        
+        public System.Threading.Tasks.Task<NoteTaking.Wcf.Contracts.Models.UserDto> GetAsync(System.Guid id) {
+            return base.Channel.GetAsync(id);
+        }
+        
+        public NoteTaking.Wcf.Contracts.Models.UserListItemDto[] GetAll() {
+            return base.Channel.GetAll();
+        }
+        
+        public System.Threading.Tasks.Task<NoteTaking.Wcf.Contracts.Models.UserListItemDto[]> GetAllAsync() {
+            return base.Channel.GetAllAsync();
         }
     }
 }

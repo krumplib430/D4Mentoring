@@ -50,4 +50,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="NoteDto" nillable="true" type="tns:NoteDto" />
+  <xs:complexType name="ArrayOfUserListItemDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserListItemDto" nillable="true" type="tns:UserListItemDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserListItemDto" nillable="true" type="tns:ArrayOfUserListItemDto" />
+  <xs:complexType name="UserListItemDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegisteredOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserListItemDto" nillable="true" type="tns:UserListItemDto" />
 </xs:schema>

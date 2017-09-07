@@ -14,6 +14,8 @@ namespace NoteTaking.Wcf.TestClient
 		{
 			var userServiceClient = new UserServiceClient(NET_NAMED_PIPE_ENDPOINT_NAME);
 
+			var userListItemDtos = userServiceClient.GetAll();
+
 			var userCreateDto = new UserCreateDto
 			{
 				UserName = Guid.NewGuid().ToString().Substring(0, 10),
@@ -35,6 +37,7 @@ namespace NoteTaking.Wcf.TestClient
 			};
 
 			var userDto = userServiceClient.Create(userCreateDto);
+			var userDtoagain = userServiceClient.Get(userDto.Id);
 		}
 	}
 }

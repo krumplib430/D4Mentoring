@@ -49,6 +49,7 @@
     <Compile Include="Models\NoteDto.cs" />
     <Compile Include="Models\UserCreateDto.cs" />
     <Compile Include="Models\UserDto.cs" />
+    <Compile Include="Models\UserListItemDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

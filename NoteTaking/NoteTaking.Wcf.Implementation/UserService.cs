@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using NoteTaking.Common.Mapping;
 using NoteTaking.Models;
 using NoteTaking.Wcf.Contracts.Interfaces;
@@ -23,6 +25,20 @@ namespace NoteTaking.Wcf.Implementation
 			var createdUser = await _userService.CreateAsync(user);
 
 			return _mappingService.Map<User, UserDto>(createdUser);
+		}
+
+		public async Task<UserDto> GetAsync(Guid id)
+		{
+			var user = await _userService.GetAsync(id);
+
+			return _mappingService.Map<User, UserDto>(user);
+		}
+
+		public async Task<List<UserListItemDto>> GetAll()
+		{
+			var users = await _userService.GetAllAsync();
+
+			return _mappingService.Map<List<User>, List<UserListItemDto>>(users);
 		}
 	}
 }

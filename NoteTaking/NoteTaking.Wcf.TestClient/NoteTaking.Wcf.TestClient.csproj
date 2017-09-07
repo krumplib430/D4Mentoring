@@ -66,6 +66,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\NoteTaking.Wcf.Contracts.Models.UserDto.datasource" />
+    <None Include="Properties\DataSources\NoteTaking.Wcf.Contracts.Models.UserListItemDto.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NoteTaking.Wcf.Contracts\NoteTaking.Wcf.Contracts.csproj">
