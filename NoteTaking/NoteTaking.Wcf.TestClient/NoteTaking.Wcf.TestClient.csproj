@@ -64,10 +64,8 @@
     <None Include="Connected Services\UserServiceReference\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserServiceReference\NoteTaking.Wcf.TestClient.UserServiceReference.UserDto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\UserServiceReference\UserService.wsdl" />
+    <None Include="Properties\DataSources\NoteTaking.Wcf.Contracts.Models.UserDto.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

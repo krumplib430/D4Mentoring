@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace NoteTaking.Wcf.Contracts.Models
@@ -21,6 +22,7 @@ namespace NoteTaking.Wcf.Contracts.Models
 		[DataMember]
 		public DateTime RegisteredOn { get; set; }
 
-		//public List<NoteDto> Notes { get; set; }
+		[DataMember]
+		public List<NoteDto> Notes { get; set; }
 	}
 }

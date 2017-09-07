@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace NoteTaking.Wcf.Contracts.Models
 {
@@ -13,5 +14,8 @@ namespace NoteTaking.Wcf.Contracts.Models
 
 		[DataMember]
 		public string Lastname { get; set; }
+
+		[DataMember]
+		public List<NoteCreateDto> Notes { get; set; }
 	}
 }

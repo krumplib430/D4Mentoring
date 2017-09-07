@@ -5,18 +5,49 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfNoteCreateDto" />
       <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserCreateDto" nillable="true" type="tns:UserCreateDto" />
+  <xs:complexType name="ArrayOfNoteCreateDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NoteCreateDto" nillable="true" type="tns:NoteCreateDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNoteCreateDto" nillable="true" type="tns:ArrayOfNoteCreateDto" />
+  <xs:complexType name="NoteCreateDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoteCreateDto" nillable="true" type="tns:NoteCreateDto" />
   <xs:complexType name="UserDto">
     <xs:sequence>
       <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
       <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfNoteDto" />
       <xs:element minOccurs="0" name="RegisteredOn" type="xs:dateTime" />
       <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserDto" nillable="true" type="tns:UserDto" />
+  <xs:complexType name="ArrayOfNoteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NoteDto" nillable="true" type="tns:NoteDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNoteDto" nillable="true" type="tns:ArrayOfNoteDto" />
+  <xs:complexType name="NoteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoteDto" nillable="true" type="tns:NoteDto" />
 </xs:schema>

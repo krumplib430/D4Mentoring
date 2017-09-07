@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Models\NoteCreateDto.cs" />
+    <Compile Include="Models\NoteDto.cs" />
     <Compile Include="Models\UserCreateDto.cs" />
     <Compile Include="Models\UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
