@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="db04067b-9208-4bfe-83f6-57f258e32fbd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7682125f-edd0-46e5-bd49-353b51297fc7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/NoteTaking.Wcf.Implementation/UserService/" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/UserService/" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="aa0fc979-0865-414e-b174-fd4c951d1fda" SourceId="1" SourceUrl="http://localhost:8733/NoteTaking.Wcf.Implementation/UserService/?xsd=xsd2" />
-    <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="70957546-f2c3-47fa-acf0-6aaddd6b0889" SourceId="1" SourceUrl="http://localhost:8733/NoteTaking.Wcf.Implementation/UserService/?wsdl" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="96bbc12e-2386-4e84-9adc-a80eb89b0f1c" SourceId="1" SourceUrl="http://localhost:8733/NoteTaking.Wcf.Implementation/UserService/?disco" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="0955bb70-2e45-4a95-a20b-27ef6b753ddc" SourceId="1" SourceUrl="http://localhost:8733/NoteTaking.Wcf.Implementation/UserService/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="847820ff-6acb-4915-976d-82d4e89a2c07" SourceId="1" SourceUrl="http://localhost:8733/NoteTaking.Wcf.Implementation/UserService/?xsd=xsd0" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="c200d0ea-322d-4f9c-b82e-7c5ffe936fc7" SourceId="1" SourceUrl="http://localhost:8733/UserService/" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="fa5d78dd-3530-42b7-a93a-41d964e4eefa" SourceId="1" SourceUrl="http://localhost:8733/UserService/" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="f031bf2c-4a54-4235-b274-7c742eb672b3" SourceId="1" SourceUrl="http://localhost:8733/UserService/" />
+    <MetadataFile FileName="NoteTaking.Wcf.Contracts.Models.xsd" MetadataType="Schema" ID="93df96da-9c07-41f4-a979-02fa682c5886" SourceId="1" SourceUrl="http://localhost:8733/UserService/" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

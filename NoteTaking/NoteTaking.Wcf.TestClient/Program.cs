@@ -7,9 +7,12 @@ namespace NoteTaking.Wcf.TestClient
 {
 	public class Program
 	{
+		private const string BASIC_HTTP_ENDPOINT_NAME = "basicHttp";
+		private const string NET_NAMED_PIPE_ENDPOINT_NAME = "netNamedPipe";
+
 		public static void Main(string[] args)
 		{
-			var userServiceClient = new UserServiceClient();
+			var userServiceClient = new UserServiceClient(NET_NAMED_PIPE_ENDPOINT_NAME);
 
 			var userCreateDto = new UserCreateDto
 			{

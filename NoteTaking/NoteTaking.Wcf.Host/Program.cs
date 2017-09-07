@@ -18,8 +18,6 @@ namespace NoteTaking.Wcf.Host
 {
 	public class Program
 	{
-		private const string BASE_URI = "http://localhost:8733/NoteTaking.Wcf.Implementation/UserService/";
-
 		public static void Main(string[] args)
 		{
 			AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
@@ -44,12 +42,12 @@ namespace NoteTaking.Wcf.Host
 
 			using (var container = builder.Build())
 			{
-				using (var serviceHost = new ServiceHost(typeof(UserService), new Uri(BASE_URI)))
+				using (var serviceHost = new ServiceHost(typeof(UserService)))
 				{
 					serviceHost.AddDependencyInjectionBehavior<IUserService>(container);
 					serviceHost.Open();
 
-					Console.WriteLine("The service is ready at {0}", BASE_URI);
+					Console.WriteLine("The service is listening...");
 					Console.WriteLine("Press <Enter> to stop the service.");
 					Console.ReadLine();
 				}

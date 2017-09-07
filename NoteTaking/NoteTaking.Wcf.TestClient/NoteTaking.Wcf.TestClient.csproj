@@ -55,26 +55,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\UserServiceReference\item.xsd">
+    <None Include="Connected Services\UserServiceReference\NoteTaking.Wcf.Contracts.Models.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserServiceReference\item1.xsd">
+    <None Include="Connected Services\UserServiceReference\service.wsdl" />
+    <None Include="Connected Services\UserServiceReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserServiceReference\item2.xsd">
+    <None Include="Connected Services\UserServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\UserServiceReference\UserService.wsdl" />
     <None Include="Properties\DataSources\NoteTaking.Wcf.Contracts.Models.UserDto.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NoteTaking.Wcf.Contracts\NoteTaking.Wcf.Contracts.csproj">
+      <Project>{f0b581c3-93ed-4f4b-ba21-31adcb102ee9}</Project>
+      <Name>NoteTaking.Wcf.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\UserServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\UserServiceReference\item.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\UserServiceReference\configuration91.svcinfo" />
@@ -87,12 +90,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NoteTaking.Wcf.Contracts\NoteTaking.Wcf.Contracts.csproj">
-      <Project>{f0b581c3-93ed-4f4b-ba21-31adcb102ee9}</Project>
-      <Name>NoteTaking.Wcf.Contracts</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
