@@ -1,0 +1,1 @@
+INSERT INTO Test(Value) VALUES( 'Salala')
