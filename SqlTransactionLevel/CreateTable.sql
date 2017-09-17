@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[Test](
+    [Id] [int] IDENTITY(1,1) NOT NULL,
+    [Value] nvarchar(50) NOT NULL
+ CONSTRAINT [PK_History] PRIMARY KEY CLUSTERED 
+(
+    [ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON)
+) ON [PRIMARY]
+
+GO
+
+
+INSERT INTO [dbo].[Test] ([Value]) VALUES ('Value 1')
+INSERT INTO [dbo].[Test] ([Value]) VALUES ('Value 2')
+GO
